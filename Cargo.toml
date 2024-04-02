@@ -7,7 +7,7 @@ description = "A minimal file exchange server designed for clients with browsers
 homepage = "https://github.com/Evian-Zhang/xiao-files"
 repository = "https://github.com/Evian-Zhang/xiao-files"
 readme = "README.md"
-keywords = ["file server", "http server", "server"]
+keywords = ["file-server", "http-server", "server"]
 categories = ["coommand-line-utilities", "filesystem", "network-programming", "web-programming::http-server"]
 
 [dependencies]
