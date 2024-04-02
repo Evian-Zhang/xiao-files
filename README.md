@@ -25,6 +25,12 @@ cargo build --release
 
 The generated executable will reside in `./target/release/xiao-files`.
 
+Altenatively, Xiao-Files can be installed by cargo:
+
+```shell
+cargo install xiao-files
+```
+
 ## Usage
 
 ```shell

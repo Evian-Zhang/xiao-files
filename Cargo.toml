@@ -2,8 +2,13 @@
 name = "xiao-files"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT OR Apache-2.0"
+description = "A minimal file exchange server designed for clients with browsers only."
+homepage = "https://github.com/Evian-Zhang/xiao-files"
+repository = "https://github.com/Evian-Zhang/xiao-files"
+readme = "README.md"
+keywords = ["file server", "http server", "server"]
+categories = ["coommand-line-utilities", "filesystem", "network-programming", "web-programming::http-server"]
 
 [dependencies]
 actix-web = "4"
