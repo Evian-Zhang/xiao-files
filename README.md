@@ -4,7 +4,7 @@ Xiao-Files is a minimal file exchange server designed for clients with browsers 
 
 ## Example
 
-Let's say we have a host with IP `10.8.20.1`, and a Windows XP VM client at `10.8.20.2`. Exchanging files from and to this WinXP VM is an annoying thing, since we need to configure a FTP server in the host, or we need to setup OpenSSH server in the WinXP side.
+Let's say we have a host with IP `10.8.20.1`, and a Windows XP VM client at `10.8.20.2`. Exchanging files from and to this WinXP VM is an annoying thing, since we need to configure a FTP server in the host, or we need to set up OpenSSH server in the WinXP side.
 
 With Xiao-Files, we can easily accomplish this task by using
 
