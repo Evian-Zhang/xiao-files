@@ -1,12 +1,12 @@
 use std::path::PathBuf;
 
 use actix_files::Files;
-use actix_multipart::form::{tempfile::TempFile, MultipartForm};
+use actix_multipart::form::{tempfile::TempFile, MultipartForm, MultipartFormConfig};
 use actix_web::{
     get,
     middleware::Logger,
     post,
-    web::{Data, FormConfig, Redirect},
+    web::{Data, Redirect},
     App, HttpRequest, HttpResponse, HttpServer, Responder,
 };
 use clap::Parser;
@@ -79,13 +79,13 @@ async fn main() -> std::io::Result<()> {
 
     let mut server = HttpServer::new(move || {
         App::new()
+            .app_data(MultipartFormConfig::default().total_limit(1024 * 1024 * 1024))
             .service(upload_page)
             .service(receive_uploaded_files)
             .service(Files::new("/files", &real_path).show_files_listing())
             .app_data(Data::new(Config {
                 real_path: real_path.clone(),
             }))
-            .app_data(FormConfig::default().limit(1024 * 1024 * 1024))
             .wrap(Logger::default())
     })
     .bind((address, port))?;
