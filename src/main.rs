@@ -6,7 +6,7 @@ use actix_web::{
     get,
     middleware::Logger,
     post,
-    web::{Data, Redirect},
+    web::{Data, FormConfig, Redirect},
     App, HttpRequest, HttpResponse, HttpServer, Responder,
 };
 use clap::Parser;
@@ -85,6 +85,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(Data::new(Config {
                 real_path: real_path.clone(),
             }))
+            .app_data(FormConfig::default().limit(1024 * 1024 * 1024))
             .wrap(Logger::default())
     })
     .bind((address, port))?;
